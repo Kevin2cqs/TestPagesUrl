@@ -16,10 +16,7 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script>
       // 等待 Telegram Web App 完成初始化
-    console.log('start-00000')
-    window.Telegram.WebApp.showAlert('Hey there!');
     window.Telegram.WebApp.ready(() => {
-      console.log('ready-111')
       // 获取用户信息
       const user = window.Telegram.WebApp.initDataUnsafe.user;
 
