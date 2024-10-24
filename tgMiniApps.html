@@ -14,28 +14,29 @@
 </head>
 <body>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        // 等待 Telegram Web App 完成初始化
-      console.log('start-00000')
-        window.Telegram.WebApp.onReady(() => {
-          console.log('ready-111')
-          // 获取用户信息
-          const user = window.Telegram.WebApp.initDataUnsafe.user;
+  <script>
+      // 等待 Telegram Web App 完成初始化
+    console.log('start-00000')
+    window.Telegram.WebApp.showAlert('Hey there!');
+    window.Telegram.WebApp.onReady(() => {
+      console.log('ready-111')
+      // 获取用户信息
+      const user = window.Telegram.WebApp.initDataUnsafe.user;
 
-          if (user) {
-              console.log('用户信息:', user);
-              // 你可以在这里处理用户信息，比如显示用户名、用户 ID 等
-              const userId = user.id;
-              const userName = user.username;
-              const firstName = user.first_name;
-              const lastName = user.last_name;
-              window.Telegram.WebApp.showAlert(userName);
-              // 进一步处理用户信息
-          } else {
-              console.log('未获取到用户信息');
-          }
-        });
-    </script>
+      if (user) {
+          console.log('用户信息:', user);
+          // 你可以在这里处理用户信息，比如显示用户名、用户 ID 等
+          const userId = user.id;
+          const userName = user.username;
+          const firstName = user.first_name;
+          const lastName = user.last_name;
+          window.Telegram.WebApp.showAlert(userName);
+          // 进一步处理用户信息
+      } else {
+          console.log('未获取到用户信息');
+      }
+    });
+  </script>
   <div id="test"></div>
 </body>
 </html>
